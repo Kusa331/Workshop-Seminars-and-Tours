@@ -90,27 +90,30 @@ body, html, #root, .app {
   color: #61dafb;
 }
 
-/* Hamburger (initially hidden) */
+/* Hamburger button */
 .hamburger {
-  display: none;
   position: fixed;
   top: 20px;
   left: 20px;
-  width: 32px;
-  height: 28px;
+  width: 36px;      /* slightly bigger */
+  height: 30px;     /* slightly bigger */
   cursor: pointer;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: none;
+  background: rgba(255, 255, 255, 0.15);  /* translucent white background */
+  border-radius: 6px;
+  padding: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* subtle shadow */
   border: none;
   z-index: 1100;
 }
 
 .hamburger span {
   display: block;
-  height: 4px;
-  background-color: #0f172a;
-  border-radius: 2px;
+  height: 5px;               /* thicker bars */
+  background-color: #ffffff; /* white bars for contrast */
+  border-radius: 3px;
   transition: all 0.3s ease;
 }
 
@@ -131,7 +134,7 @@ body, html, #root, .app {
 /* Main content */
 .content {
   margin-left: 280px;
-  padding: 3rem;
+  padding: 3rem 3rem 3rem 3rem;
   flex-grow: 1;
   overflow-y: auto;
   min-height: 100vh;
@@ -143,7 +146,7 @@ body, html, #root, .app {
   margin-left: 0;
 }
 
-/* Sections */
+/* Sections styling */
 section {
   background: #fff;
   border-radius: 15px;
@@ -167,7 +170,7 @@ section p {
   line-height: 1.6;
 }
 
-/* Image inside sections */
+/* Section photo */
 .section-photo {
   max-width: 450px;
   width: 100%;
@@ -177,7 +180,7 @@ section p {
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-/* Reflection textarea */
+/* Reflection area */
 textarea {
   width: 100%;
   padding: 1rem;
@@ -253,13 +256,13 @@ textarea:focus {
   color: #b91c1c;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 991px) {
   .sidebar {
     width: 240px;
   }
   .content {
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 2rem;
   }
 }
 
@@ -269,6 +272,8 @@ textarea:focus {
     top: 0;
     left: 0;
     height: 100vh;
+    z-index: 1000;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
     width: 260px;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
@@ -284,7 +289,8 @@ textarea:focus {
   }
 
   .hamburger {
-    display: flex; /* Visible only on small screens */
+    top: 15px;
+    left: 15px;
   }
 
   .profile-pic {

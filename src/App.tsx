@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import profilePic from './pictures/ken.jpg';
-import introPic from './pictures/first.jpg';
+import profilePic from './assets/ken.jpg';
+import introPic from './assets/first.jpg';  
+import introPic2 from "./assets/second.jpg";
+import introPic3 from "./assets/third.jpg";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -21,7 +23,7 @@ function App() {
 
   function addReflection() {
     if (!reflectionText.trim()) return;
-     const newEntry = {
+    const newEntry = {
       id: Date.now(),
       text: reflectionText.trim(),
       date: new Date().toLocaleString(),
@@ -65,14 +67,64 @@ function App() {
       <main className="content">
         <section id="introduction">
           <h1>Introduction</h1>
-          <p>Welcome to my E-Journal! I'm Ken, a BSIT student from UIC.</p>
+          <p>Welcome to my E-Journal! I'm Ken, Pursuing Bachelor of Science in Information Technology at the University of the Immaculate Conception,Davao City .</p>
         </section>
 
-        <section id="organizer">
-          <h2>Organizer</h2>
-           <img src={introPic} alt="Introduction" style={{ maxWidth: '190px',width: '100%',height: 'auto',borderRadius: '12px',boxShadow: '0 8px 20px rgba(0, 0, 0, 0.12)',
-           marginBottom: '1.5rem',}}/>
-        <p>Speaker:Ned Palacios</p>
+        <section id="organizer" style={{ padding: '2rem' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Organizer</h2>
+
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+            {/* Speaker 1 */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <img
+                src={introPic}
+                alt="Ned Palacios"
+                style={{
+                  maxWidth: '190px',
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '12px',
+                  boxShadow: '0 8px 20px rgba(0, 0, 0, 0.12)',
+                  marginBottom: '0.5rem',
+                }}
+              />
+              <p>Speaker: Ned Palacios</p>
+            </div>
+
+            {/* Speaker 2 */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <img
+                src={introPic2}
+                alt="Lucas Castro"
+                style={{
+                  maxWidth: '190px',
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '12px',
+                  boxShadow: '0 8px 20px rgba(0, 0, 0, 0.12)',
+                  marginBottom: '0.5rem',
+                }}
+              />
+              <p>Speaker: Lucas Castro</p>
+            </div>
+
+            {/* Speaker 3 */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <img
+                src={introPic3}
+                alt="Cris John Manero"
+                style={{
+                  maxWidth: '190px',
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '12px',
+                  boxShadow: '0 8px 20px rgba(0, 0, 0, 0.12)',
+                  marginBottom: '0.5rem',
+                }}
+              />
+              <p>Speaker: Cris John Manero</p>
+            </div>
+          </div>
         </section>
 
         <section id="schedule">
