@@ -3,7 +3,9 @@ import './App.css';
 import profilePic from './assets/ken.jpg';
 import introPic from './assets/first.jpg';  
 import introPic2 from "./assets/second.jpg";
-import introPic3 from "./assets/third.jpg";
+import introPic3 from "./assets/third.jpg"
+import introPic4 from "./assets/fourth.jpg"
+
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -66,7 +68,7 @@ function App() {
 
       <main className="content">
         <section id="introduction">
-          <h1>Introduction</h1>
+          <h1>Introduction</h1>  
           <p>Welcome to my E-Journal! I'm Ken, Pursuing Bachelor of Science in Information Technology at the University of the Immaculate Conception,Davao City .</p>
         </section>
 
@@ -125,6 +127,24 @@ function App() {
               <p>Speaker: Cris John Manero</p>
             </div>
           </div>
+
+               {/* Speaker 4 */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <img
+                src={introPic4}
+                alt="Hizon Caja"
+                style={{
+                  maxWidth: '190px',
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '12px',
+                  boxShadow: '0 8px 20px rgba(0, 0, 0, 0.12)',
+                  marginBottom: '0.5rem',
+                }}
+              />
+              <p>Speaker: Hizon Caja</p>
+            </div>
+          
         </section>
 
         <section id="schedule">
